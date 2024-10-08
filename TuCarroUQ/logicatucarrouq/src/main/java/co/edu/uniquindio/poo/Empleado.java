@@ -1,5 +1,5 @@
 package co.edu.uniquindio.poo;
 
-public class Empleado {
+public class Empleado extends Persona {
 
 }
