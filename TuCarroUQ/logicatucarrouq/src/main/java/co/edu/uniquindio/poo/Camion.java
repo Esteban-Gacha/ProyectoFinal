@@ -2,15 +2,15 @@ package co.edu.uniquindio.poo;
 
 public class Camion extends Vehiculo{
     private int numeroDeEjes;
-    private double capacidadDeCarga;
+    private double capacidadDeCarga,precioVenta,precioAlquiler;
     private boolean aireAcondicionado,frenosDeAire,ABS;
     private String tipoCamion;
 
 
     public Camion(String marca, String referencia, String cambios, int velocidadMaxima, int cilindraje, boolean nuevo,
-            Combustible combustible, Transmision transmision, int kilometraje, int numeroDeEjes,
-            double capacidadDeCarga, boolean aireAcondicionado, boolean frenosDeAire, boolean ABS, String tipoCamion) {
-        super(marca, referencia, cambios, velocidadMaxima, cilindraje, nuevo, combustible, transmision, kilometraje);
+            TipoDeCombustible combustible, TipoDeTransmision transmision, int kilometraje, int numeroDeEjes,
+            double capacidadDeCarga, boolean aireAcondicionado, boolean frenosDeAire, boolean ABS, String tipoCamion,TipoDeVehiculo tipoDeVehiculo) {
+        super(marca, referencia, cambios, velocidadMaxima, cilindraje, kilometraje, nuevo, combustible, transmision, tipoDeVehiculo);
         this.numeroDeEjes = numeroDeEjes;
         this.capacidadDeCarga = capacidadDeCarga;
         this.aireAcondicionado = aireAcondicionado;
@@ -68,16 +68,17 @@ public class Camion extends Vehiculo{
     }
 
     @Override
-    public void calcularPrecioVenta() {
+    public double calcularPrecioVenta() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioVenta'");
     }
 
     @Override
-    public void calcularPrecioAlquiler(int dias) {
+    public double calcularPrecioAlquiler(int dias) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioAlquiler'");
     }
+
 
 
     

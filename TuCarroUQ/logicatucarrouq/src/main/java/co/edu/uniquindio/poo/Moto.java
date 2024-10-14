@@ -1,23 +1,31 @@
 package co.edu.uniquindio.poo;
 
 public class Moto extends Vehiculo{
+    private double precioVenta,precioAlquiler;
 
     public Moto(String marca, String referencia, String cambios, int velocidadMaxima, int cilindraje, boolean nuevo,
-            Combustible combustible, Transmision transmision, int kilometraje) {
-        super(marca, referencia, cambios, velocidadMaxima, cilindraje, nuevo, combustible, transmision, kilometraje);
+            TipoDeCombustible combustible, TipoDeTransmision transmision, int kilometraje,TipoDeVehiculo tipoDeVehiculo) {
+        super(marca, referencia, cambios, velocidadMaxima, cilindraje, kilometraje, nuevo, combustible, transmision, tipoDeVehiculo);
         
     }
 
     @Override
-    public void calcularPrecioVenta() {
+    public double calcularPrecioVenta() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioVenta'");
     }
 
     @Override
-    public void calcularPrecioAlquiler(int dias) {
+    public double calcularPrecioAlquiler(int dias) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioAlquiler'");
     }
+
+    @Override
+    public String toString() {
+        return "Moto [precioVenta=" + precioVenta + ", precioAlquiler=" + precioAlquiler + "]";
+    }
+
+    
     
 }

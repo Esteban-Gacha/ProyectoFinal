@@ -6,10 +6,10 @@ public class Bus extends Vehiculo{
     private boolean aireAcondicionado,camaraReversa,ABS;
 
     public Bus(String marca, String referencia, String cambios, int velocidadMaxima, int cilindraje, boolean nuevo,
-            Combustible combustible, Transmision transmision, int kilometraje, int numeroPasajero, int numeroPuertas,
+            TipoDeCombustible combustible, TipoDeTransmision transmision, int kilometraje, int numeroPasajero, int numeroPuertas,
             int numeroBolsasDeAire, int numeroEjes, int numeroSalidasEmergencia, double capacidadMaletero,
-            boolean aireAcondicionado, boolean camaraReversa, boolean ABS) {
-        super(marca, referencia, cambios, velocidadMaxima, cilindraje, nuevo, combustible, transmision, kilometraje);
+            boolean aireAcondicionado, boolean camaraReversa, boolean ABS,TipoDeVehiculo tipoDeVehiculo) {
+       super(marca, referencia, cambios, velocidadMaxima, cilindraje, kilometraje, nuevo, combustible, transmision, tipoDeVehiculo);
         this.numeroPasajero = numeroPasajero;
         this.numeroPuertas = numeroPuertas;
         this.numeroBolsasDeAire = numeroBolsasDeAire;
@@ -94,15 +94,17 @@ public class Bus extends Vehiculo{
     }
 
     @Override
-    public void calcularPrecioVenta() {
+    public double calcularPrecioVenta() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioVenta'");
     }
 
     @Override
-    public void calcularPrecioAlquiler(int dias) {
+    public double calcularPrecioAlquiler(int dias) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioAlquiler'");
     }
+
+
     
 }

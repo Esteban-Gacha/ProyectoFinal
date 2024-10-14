@@ -5,19 +5,28 @@ public abstract class Vehiculo {
     private String marca, referencia, cambios;
     private int velocidadMaxima, cilindraje, kilometraje;
     private boolean nuevo;
-    private Combustible combustible;
-    private Transmision transmision;
+    private TipoDeCombustible combustible;
+    private TipoDeTransmision transmision;
+    private TipoDeVehiculo tipoDeVehiculo;
+    private double precioVenta,precioAlquiler;
+    
 
-    public Vehiculo(String marca, String referencia, String cambios, int velocidadMaxima,
-            int cilindraje, boolean nuevo, Combustible combustible, Transmision transmision, int kilometraje) {
+
+
+
+    public Vehiculo(String marca, String referencia, String cambios, int velocidadMaxima, int cilindraje,
+            int kilometraje, boolean nuevo, TipoDeCombustible combustible, TipoDeTransmision transmision,
+            TipoDeVehiculo tipoDeVehiculo) {
         this.marca = marca;
         this.referencia = referencia;
         this.cambios = cambios;
-        this.transmision = transmision;
+        this.velocidadMaxima = velocidadMaxima;
+        this.cilindraje = cilindraje;
+        this.kilometraje = kilometraje;
         this.nuevo = nuevo;
         this.combustible = combustible;
         this.transmision = transmision;
-        this.kilometraje = kilometraje;
+        this.tipoDeVehiculo = tipoDeVehiculo;
     }
 
     public String getMarca() {
@@ -60,27 +69,27 @@ public abstract class Vehiculo {
         this.cilindraje = cilindraje;
     }
 
-    public boolean getEstado() {
+    public boolean getEsNuevo() {
         return nuevo;
     }
 
-    public void setEstado(boolean nuevo) {
+    public void setEsNuevo(boolean nuevo) {
         this.nuevo = nuevo;
     }
 
-    public Combustible getCombustible() {
+    public TipoDeCombustible getCombustible() {
         return combustible;
     }
 
-    public void setCombustible(Combustible combustible) {
+    public void setCombustible(TipoDeCombustible combustible) {
         this.combustible = combustible;
     }
 
-    public Transmision getTransmision() {
+    public TipoDeTransmision getTransmision() {
         return transmision;
     }
 
-    public void setTransmision(Transmision transmision) {
+    public void setTransmision(TipoDeTransmision transmision) {
         this.transmision = transmision;
     }
 
@@ -92,9 +101,33 @@ public abstract class Vehiculo {
         this.kilometraje = kilometraje;
     }
 
-    public abstract void calcularPrecioVenta();
+    public TipoDeVehiculo getTipoDeVehiculo() {
+        return tipoDeVehiculo;
+    }
 
-    public abstract void calcularPrecioAlquiler(int dias);
+    public void setTipoDeVehiculo(TipoDeVehiculo tipoDeVehiculo) {
+        this.tipoDeVehiculo = tipoDeVehiculo;
+    }
+
+    public double getPrecioVenta() {
+        return precioVenta;
+    }
+
+    public void setPrecioVenta(double precioVenta) {
+        this.precioVenta = precioVenta;
+    }
+
+    public double getPrecioAlquiler() {
+        return precioAlquiler;
+    }
+
+    public void setPrecioAlquiler(double precioAlquiler) {
+        this.precioAlquiler = precioAlquiler;
+    }
+
+    public abstract double calcularPrecioVenta();
+
+    public abstract double calcularPrecioAlquiler(int dias);
 
     @Override
     public String toString() {

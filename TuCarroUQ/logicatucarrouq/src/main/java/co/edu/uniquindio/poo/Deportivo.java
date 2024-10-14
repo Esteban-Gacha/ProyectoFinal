@@ -2,12 +2,12 @@ package co.edu.uniquindio.poo;
 
 public class Deportivo extends Vehiculo {
     private int numeroDePasajeros,NumeroDePuertas,NumeroDeBolsasDeAire,NumeroCaballosDeFuerza;
-    private double TiempoEnAlcanzar100kmh;
+    private double TiempoEnAlcanzar100kmh,precioVenta,precioAlquiler;
     
     public Deportivo(String marca, String referencia, String cambios, int velocidadMaxima, int cilindraje,
-            boolean nuevo, Combustible combustible, Transmision transmision, int kilometraje, int numeroDePasajeros,
-            int numeroDePuertas, int numeroDeBolsasDeAire, int numeroCaballosDeFuerza, double tiempoEnAlcanzar100kmh) {
-        super(marca, referencia, cambios, velocidadMaxima, cilindraje, nuevo, combustible, transmision, kilometraje);
+            boolean nuevo, TipoDeCombustible combustible, TipoDeTransmision transmision, int kilometraje, int numeroDePasajeros,
+            int numeroDePuertas, int numeroDeBolsasDeAire, int numeroCaballosDeFuerza, double tiempoEnAlcanzar100kmh,TipoDeVehiculo tipoDeVehiculo) {
+        super(marca, referencia, cambios, velocidadMaxima, cilindraje, kilometraje, nuevo, combustible, transmision, tipoDeVehiculo);
         this.numeroDePasajeros = numeroDePasajeros;
         NumeroDePuertas = numeroDePuertas;
         NumeroDeBolsasDeAire = numeroDeBolsasDeAire;
@@ -56,13 +56,13 @@ public class Deportivo extends Vehiculo {
     }
 
     @Override
-    public void calcularPrecioVenta() {
+    public double calcularPrecioVenta() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioVenta'");
     }
 
     @Override
-    public void calcularPrecioAlquiler(int dias) {
+    public double calcularPrecioAlquiler(int dias) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioAlquiler'");
     }

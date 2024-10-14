@@ -2,15 +2,15 @@ package co.edu.uniquindio.poo;
 
 public class Camioneta extends Vehiculo {
     private int numeroDePasajeros,numeroBolsasAire;
-    private double capacidadDeMaletero;
+    private double capacidadDeMaletero,precioVenta,precioAlquiler;
     private boolean airesAcondicionado,camaraReversa,velocidadCrucero,ABS,sensoresColision,sensorTraficoCruzado,asistentePermanenciaCarril,es4x4;
 
     public Camioneta(String marca, String referencia, String cambios, int velocidadMaxima, int cilindraje,
-            boolean nuevo, Combustible combustible, Transmision transmision, int kilometraje, int numeroDePasajeros,
+            boolean nuevo, TipoDeCombustible combustible, TipoDeTransmision transmision, int kilometraje, int numeroDePasajeros,
             int numeroBolsasAire, double capacidadDeMaletero, boolean airesAcondicionado, boolean camaraReversa,
             boolean velocidadCrucero, boolean ABS, boolean sensoresColision, boolean sensorTraficoCruzado,
-            boolean asistentePermanenciaCarril, boolean es4x4) {
-        super(marca, referencia, cambios, velocidadMaxima, cilindraje, nuevo, combustible, transmision, kilometraje);
+            boolean asistentePermanenciaCarril, boolean es4x4,TipoDeVehiculo tipoDeVehiculo) {
+       super(marca, referencia, cambios, velocidadMaxima, cilindraje, kilometraje, nuevo, combustible, transmision, tipoDeVehiculo);
         this.numeroDePasajeros = numeroDePasajeros;
         this.numeroBolsasAire = numeroBolsasAire;
         this.capacidadDeMaletero = capacidadDeMaletero;
@@ -113,13 +113,13 @@ public class Camioneta extends Vehiculo {
     }
 
     @Override
-    public void calcularPrecioVenta() {
+    public double   calcularPrecioVenta() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioVenta'");
     }
 
     @Override
-    public void calcularPrecioAlquiler(int dias) {
+    public double calcularPrecioAlquiler(int dias) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioAlquiler'");
     }

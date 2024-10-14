@@ -2,14 +2,14 @@ package co.edu.uniquindio.poo;
 
 public class PickUp extends Vehiculo {
     private int numeroPasajeros, numeroPuertas, numeroBolsasDeAire;
-    private double capacidadMaletero;
+    private double capacidadMaletero,precioVenta;
     private boolean aireAcondicionado, camaraReversa, ABS;
 
     public PickUp(String marca, String referencia, String cambios, int velocidadMaxima, int cilindraje, boolean nuevo,
-            Combustible combustible, Transmision transmision, int kilometraje, int numeroPasajeros, int numeroPuertas,
+            TipoDeCombustible combustible, TipoDeTransmision transmision, int kilometraje, int numeroPasajeros, int numeroPuertas,
             int numeroBolsasDeAire, double capacidadMaletero, boolean aireAcondicionado, boolean camaraReversa,
-            boolean ABS) {
-        super(marca, referencia, cambios, velocidadMaxima, cilindraje, nuevo, combustible, transmision, kilometraje);
+            boolean ABS,TipoDeVehiculo tipoDeVehiculo) {
+        super(marca, referencia, cambios, velocidadMaxima, cilindraje, kilometraje, nuevo, combustible, transmision, tipoDeVehiculo);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
         this.numeroBolsasDeAire = numeroBolsasDeAire;
@@ -76,15 +76,17 @@ public class PickUp extends Vehiculo {
     }
 
     @Override
-    public void calcularPrecioVenta() {
+    public double calcularPrecioVenta() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioVenta'");
     }
 
     @Override
-    public void calcularPrecioAlquiler(int dias) {
+    public double calcularPrecioAlquiler(int dias) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioAlquiler'");
     }
+
+
 
 }
