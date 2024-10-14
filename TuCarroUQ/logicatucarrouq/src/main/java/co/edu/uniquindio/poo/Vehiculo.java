@@ -3,22 +3,21 @@ package co.edu.uniquindio.poo;
 public abstract class Vehiculo {
 
     private String marca, referencia, cambios;
-    private int velocidadMaxima, cilindraje, modelo, kilometraje;
-    private Estado estado;
+    private int velocidadMaxima, cilindraje, kilometraje;
+    private boolean nuevo;
     private Combustible combustible;
     private Transmision transmision;
 
     public Vehiculo(String marca, String referencia, String cambios, int velocidadMaxima,
-            int cilindraje, int modelo, Estado estado, Combustible combustible, Transmision transmision, int kilometraje) {
+            int cilindraje, boolean nuevo, Combustible combustible, Transmision transmision, int kilometraje) {
         this.marca = marca;
         this.referencia = referencia;
         this.cambios = cambios;
         this.transmision = transmision;
-        this.modelo = modelo;
-        this.estado = estado;
+        this.nuevo = nuevo;
         this.combustible = combustible;
         this.transmision = transmision;
-        this.kilometraje=kilometraje;
+        this.kilometraje = kilometraje;
     }
 
     public String getMarca() {
@@ -61,20 +60,12 @@ public abstract class Vehiculo {
         this.cilindraje = cilindraje;
     }
 
-    public int getModelo() {
-        return modelo;
+    public boolean getEstado() {
+        return nuevo;
     }
 
-    public void setModelo(int modelo) {
-        this.modelo = modelo;
-    }
-
-    public Estado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
+    public void setEstado(boolean nuevo) {
+        this.nuevo = nuevo;
     }
 
     public Combustible getCombustible() {
@@ -101,11 +92,15 @@ public abstract class Vehiculo {
         this.kilometraje = kilometraje;
     }
 
+    public abstract void calcularPrecioVenta();
+
+    public abstract void calcularPrecioAlquiler(int dias);
+
     @Override
     public String toString() {
         return "Vehiculo [marca=" + marca + ", referencia=" + referencia + ", cambios=" + cambios + ", velocidadMaxima="
-                + velocidadMaxima + ", cilindraje=" + cilindraje + ", modelo=" + modelo + ", kilometraje=" + kilometraje
-                + ", estado=" + estado + ", combustible=" + combustible + ", transmision=" + transmision + "]";
+                + velocidadMaxima + ", cilindraje=" + cilindraje + ", modelo=" + ", kilometraje=" + kilometraje
+                + ", es nuevo=" + nuevo + ", combustible=" + combustible + ", transmision=" + transmision + "]";
     }
 
 }

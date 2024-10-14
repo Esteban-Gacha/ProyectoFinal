@@ -1,16 +1,18 @@
 package co.edu.uniquindio.poo;
 
-public class Sedan extends Vehiculo{
+public class Sedan extends Vehiculo {
 
-    private int numeroPasajeros, numeroPuertas, capacidadMaletero, numeroBolsasAire;
-    private boolean aireAcondicionado, camaraReversa, velocidadCrucero, frenosABS, sensoresColision, sensorTraficoCruzado, asistentePermanenciaCarril;
+    private int numeroPasajeros, numeroPuertas, numeroBolsasAire;
+    private double capacidadMaletero;
+    private boolean aireAcondicionado, camaraReversa, velocidadCrucero, frenosABS, sensoresColision,
+            sensorTraficoCruzado, asistentePermanenciaCarril;
 
-    public Sedan(String marca, String referencia, String cambios, int velocidadMaxima, int cilindraje, int modelo,
-            Estado estado, Combustible combustible, Transmision transmision, int kilometraje, int numeroPasajeros,
-            int numeroPuertas, int capacidadMaletero, int numeroBolsasAire, boolean aireAcondicionado,
+    public Sedan(String marca, String referencia, String cambios, int velocidadMaxima, int cilindraje,
+            boolean nuevo, Combustible combustible, Transmision transmision, int kilometraje, int numeroPasajeros,
+            int numeroPuertas, double capacidadMaletero, int numeroBolsasAire, boolean aireAcondicionado,
             boolean camaraReversa, boolean velocidadCrucero, boolean frenosABS, boolean sensoresColision,
             boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril) {
-        super(marca, referencia, cambios, velocidadMaxima, cilindraje, modelo, estado, combustible, transmision,
+        super(marca, referencia, cambios, velocidadMaxima, cilindraje, nuevo, combustible, transmision,
                 kilometraje);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
@@ -41,11 +43,11 @@ public class Sedan extends Vehiculo{
         this.numeroPuertas = numeroPuertas;
     }
 
-    public int getCapacidadMaletero() {
+    public double getCapacidadMaletero() {
         return capacidadMaletero;
     }
 
-    public void setCapacidadMaletero(int capacidadMaletero) {
+    public void setCapacidadMaletero(double capacidadMaletero) {
         this.capacidadMaletero = capacidadMaletero;
     }
 
@@ -113,7 +115,19 @@ public class Sedan extends Vehiculo{
         this.asistentePermanenciaCarril = asistentePermanenciaCarril;
     }
 
-    
+
+    @Override
+    public void calcularPrecioVenta() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioVenta'");
+    }
+
+    @Override
+    public void calcularPrecioAlquiler(int dias) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioAlquiler'");
+    }
+
     @Override
     public String toString() {
         return "Sedan [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas + ", capacidadMaletero="
@@ -127,5 +141,4 @@ public class Sedan extends Vehiculo{
 
 
 
-    
 }
