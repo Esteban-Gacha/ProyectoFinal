@@ -1,21 +1,25 @@
 package co.edu.uniquindio.poo;
 
-public class Sedan extends Vehiculo{
+public class Sedan extends Vehiculo {
 
-    private int numeroPasajeros, numeroPuertas, capacidadMaletero, numeroBolsasAire;
-    private boolean aireAcondicionado, camaraReversa, velocidadCrucero, frenosABS, sensoresColision, sensorTraficoCruzado, asistentePermanenciaCarril;
+    private int numeroPasajeros, numeroPuertas, numeroBolsasAire;
+    private double capacidadMaletero,precioVenta,precioAlquiler;
+    private boolean aireAcondicionado, camaraReversa, velocidadCrucero, frenosABS, sensoresColision,
+            sensorTraficoCruzado, asistentePermanenciaCarril;
 
-    public Sedan(String marca, String referencia, String cambios, int velocidadMaxima, int cilindraje, int modelo,
-            Estado estado, Combustible combustible, Transmision transmision, int kilometraje, int numeroPasajeros,
-            int numeroPuertas, int capacidadMaletero, int numeroBolsasAire, boolean aireAcondicionado,
-            boolean camaraReversa, boolean velocidadCrucero, boolean frenosABS, boolean sensoresColision,
-            boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril) {
-        super(marca, referencia, cambios, velocidadMaxima, cilindraje, modelo, estado, combustible, transmision,
-                kilometraje);
+
+
+    public Sedan(String marca, String referencia, String cambios, int velocidadMaxima, int cilindraje, int kilometraje,
+            boolean nuevo, TipoDeCombustible combustible, TipoDeTransmision transmision, TipoDeVehiculo tipoDeVehiculo,
+            int numeroPasajeros, int numeroPuertas, int numeroBolsasAire, double capacidadMaletero,
+            boolean aireAcondicionado, boolean camaraReversa, boolean velocidadCrucero, boolean frenosABS,
+            boolean sensoresColision, boolean sensorTraficoCruzado, boolean asistentePermanenciaCarril) {
+        super(marca, referencia, cambios, velocidadMaxima, cilindraje, kilometraje, nuevo, combustible, transmision,
+                tipoDeVehiculo);
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
-        this.capacidadMaletero = capacidadMaletero;
         this.numeroBolsasAire = numeroBolsasAire;
+        this.capacidadMaletero = capacidadMaletero;
         this.aireAcondicionado = aireAcondicionado;
         this.camaraReversa = camaraReversa;
         this.velocidadCrucero = velocidadCrucero;
@@ -41,11 +45,11 @@ public class Sedan extends Vehiculo{
         this.numeroPuertas = numeroPuertas;
     }
 
-    public int getCapacidadMaletero() {
+    public double getCapacidadMaletero() {
         return capacidadMaletero;
     }
 
-    public void setCapacidadMaletero(int capacidadMaletero) {
+    public void setCapacidadMaletero(double capacidadMaletero) {
         this.capacidadMaletero = capacidadMaletero;
     }
 
@@ -113,7 +117,8 @@ public class Sedan extends Vehiculo{
         this.asistentePermanenciaCarril = asistentePermanenciaCarril;
     }
 
-    
+
+
     @Override
     public String toString() {
         return "Sedan [numeroPasajeros=" + numeroPasajeros + ", numeroPuertas=" + numeroPuertas + ", capacidadMaletero="
@@ -123,9 +128,20 @@ public class Sedan extends Vehiculo{
                 + sensorTraficoCruzado + ", asistentePermanenciaCarril=" + asistentePermanenciaCarril + "]";
     }
 
+    @Override
+    public double calcularPrecioVenta() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioVenta'");
+    }
+
+    @Override
+    public double calcularPrecioAlquiler(int dias) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioAlquiler'");
+    }
 
 
 
 
-    
+
 }
