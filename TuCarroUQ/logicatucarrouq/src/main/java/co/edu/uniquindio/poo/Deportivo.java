@@ -1,18 +1,36 @@
 package co.edu.uniquindio.poo;
 
 public class Deportivo extends Vehiculo {
-    private int numeroDePasajeros,NumeroDePuertas,NumeroDeBolsasDeAire,NumeroCaballosDeFuerza;
-    private double TiempoEnAlcanzar100kmh,precioVenta,precioAlquiler;
-    
+    private int numeroDePasajeros, numeroDePuertas, numeroDeBolsasDeAire, numeroCaballosDeFuerza;
+    private double tiempoEnAlcanzar100kmh, precioVenta, precioAlquiler;
+
     public Deportivo(String marca, String referencia, String cambios, int velocidadMaxima, int cilindraje,
-            boolean nuevo, TipoDeCombustible combustible, TipoDeTransmision transmision, int kilometraje, int numeroDePasajeros,
-            int numeroDePuertas, int numeroDeBolsasDeAire, int numeroCaballosDeFuerza, double tiempoEnAlcanzar100kmh,TipoDeVehiculo tipoDeVehiculo) {
+                     boolean nuevo, TipoDeCombustible combustible, TipoDeTransmision transmision, int kilometraje,
+                     int numeroDePasajeros, int numeroDePuertas, int numeroDeBolsasDeAire, int numeroCaballosDeFuerza,
+                     double tiempoEnAlcanzar100kmh, TipoDeVehiculo tipoDeVehiculo) {
         super(marca, referencia, cambios, velocidadMaxima, cilindraje, kilometraje, nuevo, combustible, transmision, tipoDeVehiculo);
+
+        if (numeroDePasajeros <= 0) {
+            throw new IllegalArgumentException("El número de pasajeros debe ser mayor a 0");
+        }
+        if (numeroDePuertas <= 0) {
+            throw new IllegalArgumentException("El número de puertas debe ser mayor a 0");
+        }
+        if (numeroDeBolsasDeAire < 0) {
+            throw new IllegalArgumentException("El número de bolsas de aire no puede ser negativo");
+        }
+        if (numeroCaballosDeFuerza <= 0) {
+            throw new IllegalArgumentException("El número de caballos de fuerza debe ser mayor a 0");
+        }
+        if (tiempoEnAlcanzar100kmh <= 0) {
+            throw new IllegalArgumentException("El tiempo en alcanzar 100 km/h debe ser mayor a 0");
+        }
+
         this.numeroDePasajeros = numeroDePasajeros;
-        NumeroDePuertas = numeroDePuertas;
-        NumeroDeBolsasDeAire = numeroDeBolsasDeAire;
-        NumeroCaballosDeFuerza = numeroCaballosDeFuerza;
-        TiempoEnAlcanzar100kmh = tiempoEnAlcanzar100kmh;
+        this.numeroDePuertas = numeroDePuertas;
+        this.numeroDeBolsasDeAire = numeroDeBolsasDeAire;
+        this.numeroCaballosDeFuerza = numeroCaballosDeFuerza;
+        this.tiempoEnAlcanzar100kmh = tiempoEnAlcanzar100kmh;
     }
 
     public int getNumeroDePasajeros() {
@@ -20,51 +38,63 @@ public class Deportivo extends Vehiculo {
     }
 
     public void setNumeroDePasajeros(int numeroDePasajeros) {
+        if (numeroDePasajeros <= 0) {
+            throw new IllegalArgumentException("El número de pasajeros debe ser mayor a 0");
+        }
         this.numeroDePasajeros = numeroDePasajeros;
     }
 
     public int getNumeroDePuertas() {
-        return NumeroDePuertas;
+        return numeroDePuertas;
     }
 
     public void setNumeroDePuertas(int numeroDePuertas) {
-        NumeroDePuertas = numeroDePuertas;
+        if (numeroDePuertas <= 0) {
+            throw new IllegalArgumentException("El número de puertas debe ser mayor a 0");
+        }
+        this.numeroDePuertas = numeroDePuertas;
     }
 
     public int getNumeroDeBolsasDeAire() {
-        return NumeroDeBolsasDeAire;
+        return numeroDeBolsasDeAire;
     }
 
     public void setNumeroDeBolsasDeAire(int numeroDeBolsasDeAire) {
-        NumeroDeBolsasDeAire = numeroDeBolsasDeAire;
+        if (numeroDeBolsasDeAire < 0) {
+            throw new IllegalArgumentException("El número de bolsas de aire no puede ser negativo");
+        }
+        this.numeroDeBolsasDeAire = numeroDeBolsasDeAire;
     }
 
     public int getNumeroCaballosDeFuerza() {
-        return NumeroCaballosDeFuerza;
+        return numeroCaballosDeFuerza;
     }
 
     public void setNumeroCaballosDeFuerza(int numeroCaballosDeFuerza) {
-        NumeroCaballosDeFuerza = numeroCaballosDeFuerza;
+        if (numeroCaballosDeFuerza <= 0) {
+            throw new IllegalArgumentException("El número de caballos de fuerza debe ser mayor a 0");
+        }
+        this.numeroCaballosDeFuerza = numeroCaballosDeFuerza;
     }
 
     public double getTiempoEnAlcanzar100kmh() {
-        return TiempoEnAlcanzar100kmh;
+        return tiempoEnAlcanzar100kmh;
     }
 
     public void setTiempoEnAlcanzar100kmh(double tiempoEnAlcanzar100kmh) {
-        TiempoEnAlcanzar100kmh = tiempoEnAlcanzar100kmh;
+        if (tiempoEnAlcanzar100kmh <= 0) {
+            throw new IllegalArgumentException("El tiempo en alcanzar 100 km/h debe ser mayor a 0");
+        }
+        this.tiempoEnAlcanzar100kmh = tiempoEnAlcanzar100kmh;
     }
 
     @Override
     public double calcularPrecioVenta() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioVenta'");
+        throw new UnsupportedOperationException("Método 'calcularPrecioVenta' no implementado");
     }
 
     @Override
     public double calcularPrecioAlquiler(int dias) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioAlquiler'");
+        throw new UnsupportedOperationException("Método 'calcularPrecioAlquiler' no implementado");
     }
-
 }

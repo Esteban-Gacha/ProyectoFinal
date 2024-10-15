@@ -1,16 +1,27 @@
 package co.edu.uniquindio.poo;
 
 public class Camioneta extends Vehiculo {
-    private int numeroDePasajeros,numeroBolsasAire;
-    private double capacidadDeMaletero,precioVenta,precioAlquiler;
-    private boolean airesAcondicionado,camaraReversa,velocidadCrucero,ABS,sensoresColision,sensorTraficoCruzado,asistentePermanenciaCarril,es4x4;
+    private int numeroDePasajeros, numeroBolsasAire;
+    private double capacidadDeMaletero, precioVenta, precioAlquiler;
+    private boolean airesAcondicionado, camaraReversa, velocidadCrucero, ABS, sensoresColision, sensorTraficoCruzado, asistentePermanenciaCarril, es4x4;
 
     public Camioneta(String marca, String referencia, String cambios, int velocidadMaxima, int cilindraje,
-            boolean nuevo, TipoDeCombustible combustible, TipoDeTransmision transmision, int kilometraje, int numeroDePasajeros,
-            int numeroBolsasAire, double capacidadDeMaletero, boolean airesAcondicionado, boolean camaraReversa,
-            boolean velocidadCrucero, boolean ABS, boolean sensoresColision, boolean sensorTraficoCruzado,
-            boolean asistentePermanenciaCarril, boolean es4x4,TipoDeVehiculo tipoDeVehiculo) {
-       super(marca, referencia, cambios, velocidadMaxima, cilindraje, kilometraje, nuevo, combustible, transmision, tipoDeVehiculo);
+                     boolean nuevo, TipoDeCombustible combustible, TipoDeTransmision transmision, int kilometraje, int numeroDePasajeros,
+                     int numeroBolsasAire, double capacidadDeMaletero, boolean airesAcondicionado, boolean camaraReversa,
+                     boolean velocidadCrucero, boolean ABS, boolean sensoresColision, boolean sensorTraficoCruzado,
+                     boolean asistentePermanenciaCarril, boolean es4x4, TipoDeVehiculo tipoDeVehiculo) {
+        super(marca, referencia, cambios, velocidadMaxima, cilindraje, kilometraje, nuevo, combustible, transmision, tipoDeVehiculo);
+
+        if (numeroDePasajeros <= 0) {
+            throw new IllegalArgumentException("El número de pasajeros debe ser mayor a 0");
+        }
+        if (numeroBolsasAire < 0) {
+            throw new IllegalArgumentException("El número de bolsas de aire no puede ser negativo");
+        }
+        if (capacidadDeMaletero < 0) {
+            throw new IllegalArgumentException("La capacidad del maletero no puede ser negativa");
+        }
+
         this.numeroDePasajeros = numeroDePasajeros;
         this.numeroBolsasAire = numeroBolsasAire;
         this.capacidadDeMaletero = capacidadDeMaletero;
@@ -29,6 +40,9 @@ public class Camioneta extends Vehiculo {
     }
 
     public void setNumeroDePasajeros(int numeroDePasajeros) {
+        if (numeroDePasajeros <= 0) {
+            throw new IllegalArgumentException("El número de pasajeros debe ser mayor a 0");
+        }
         this.numeroDePasajeros = numeroDePasajeros;
     }
 
@@ -37,6 +51,9 @@ public class Camioneta extends Vehiculo {
     }
 
     public void setNumeroBolsasAire(int numeroBolsasAire) {
+        if (numeroBolsasAire < 0) {
+            throw new IllegalArgumentException("El número de bolsas de aire no puede ser negativo");
+        }
         this.numeroBolsasAire = numeroBolsasAire;
     }
 
@@ -45,6 +62,9 @@ public class Camioneta extends Vehiculo {
     }
 
     public void setCapacidadDeMaletero(double capacidadDeMaletero) {
+        if (capacidadDeMaletero < 0) {
+            throw new IllegalArgumentException("La capacidad del maletero no puede ser negativa");
+        }
         this.capacidadDeMaletero = capacidadDeMaletero;
     }
 
@@ -113,15 +133,12 @@ public class Camioneta extends Vehiculo {
     }
 
     @Override
-    public double   calcularPrecioVenta() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioVenta'");
+    public double calcularPrecioVenta() {
+        throw new UnsupportedOperationException("Método 'calcularPrecioVenta' no implementado");
     }
 
     @Override
     public double calcularPrecioAlquiler(int dias) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioAlquiler'");
+        throw new UnsupportedOperationException("Método 'calcularPrecioAlquiler' no implementado");
     }
-    
 }
