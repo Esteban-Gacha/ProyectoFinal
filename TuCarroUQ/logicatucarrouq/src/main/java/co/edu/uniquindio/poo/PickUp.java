@@ -2,14 +2,28 @@ package co.edu.uniquindio.poo;
 
 public class PickUp extends Vehiculo {
     private int numeroPasajeros, numeroPuertas, numeroBolsasDeAire;
-    private double capacidadMaletero,precioVenta;
+    private double capacidadMaletero, precioVenta, precioAlquiler;
     private boolean aireAcondicionado, camaraReversa, ABS;
 
     public PickUp(String marca, String referencia, String cambios, int velocidadMaxima, int cilindraje, boolean nuevo,
-            TipoDeCombustible combustible, TipoDeTransmision transmision, int kilometraje, int numeroPasajeros, int numeroPuertas,
-            int numeroBolsasDeAire, double capacidadMaletero, boolean aireAcondicionado, boolean camaraReversa,
-            boolean ABS,TipoDeVehiculo tipoDeVehiculo) {
+                  TipoDeCombustible combustible, TipoDeTransmision transmision, int kilometraje, int numeroPasajeros,
+                  int numeroPuertas, int numeroBolsasDeAire, double capacidadMaletero, boolean aireAcondicionado,
+                  boolean camaraReversa, boolean ABS, TipoDeVehiculo tipoDeVehiculo) {
         super(marca, referencia, cambios, velocidadMaxima, cilindraje, kilometraje, nuevo, combustible, transmision, tipoDeVehiculo);
+
+        if (numeroPasajeros <= 0) {
+            throw new IllegalArgumentException("El número de pasajeros debe ser mayor a 0");
+        }
+        if (numeroPuertas <= 0) {
+            throw new IllegalArgumentException("El número de puertas debe ser mayor a 0");
+        }
+        if (numeroBolsasDeAire < 0) {
+            throw new IllegalArgumentException("El número de bolsas de aire no puede ser negativo");
+        }
+        if (capacidadMaletero < 0) {
+            throw new IllegalArgumentException("La capacidad del maletero no puede ser negativa");
+        }
+
         this.numeroPasajeros = numeroPasajeros;
         this.numeroPuertas = numeroPuertas;
         this.numeroBolsasDeAire = numeroBolsasDeAire;
@@ -24,6 +38,9 @@ public class PickUp extends Vehiculo {
     }
 
     public void setNumeroPasajeros(int numeroPasajeros) {
+        if (numeroPasajeros <= 0) {
+            throw new IllegalArgumentException("El número de pasajeros debe ser mayor a 0");
+        }
         this.numeroPasajeros = numeroPasajeros;
     }
 
@@ -32,6 +49,9 @@ public class PickUp extends Vehiculo {
     }
 
     public void setNumeroPuertas(int numeroPuertas) {
+        if (numeroPuertas <= 0) {
+            throw new IllegalArgumentException("El número de puertas debe ser mayor a 0");
+        }
         this.numeroPuertas = numeroPuertas;
     }
 
@@ -40,6 +60,9 @@ public class PickUp extends Vehiculo {
     }
 
     public void setNumeroBolsasDeAire(int numeroBolsasDeAire) {
+        if (numeroBolsasDeAire < 0) {
+            throw new IllegalArgumentException("El número de bolsas de aire no puede ser negativo");
+        }
         this.numeroBolsasDeAire = numeroBolsasDeAire;
     }
 
@@ -48,6 +71,9 @@ public class PickUp extends Vehiculo {
     }
 
     public void setCapacidadMaletero(double capacidadMaletero) {
+        if (capacidadMaletero < 0) {
+            throw new IllegalArgumentException("La capacidad del maletero no puede ser negativa");
+        }
         this.capacidadMaletero = capacidadMaletero;
     }
 
@@ -77,16 +103,11 @@ public class PickUp extends Vehiculo {
 
     @Override
     public double calcularPrecioVenta() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioVenta'");
+        throw new UnsupportedOperationException("Método 'calcularPrecioVenta' no implementado");
     }
 
     @Override
     public double calcularPrecioAlquiler(int dias) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'calcularPrecioAlquiler'");
+        throw new UnsupportedOperationException("Método 'calcularPrecioAlquiler' no implementado");
     }
-
-
-
 }
